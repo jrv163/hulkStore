@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Development Steps
+
+1. Renombrar el archivo .env.template por .env
+2. Hacer los cambios respectivos en las variables de entorno
+
+REACT_API_URL=http://localhost:4000/api
+
 ## Available Scripts
 
 In the project directory, you can run:
