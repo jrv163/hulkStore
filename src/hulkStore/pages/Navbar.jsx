@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { ProviderContext } from '../../context/provider.js';
+import { useAuthStore } from '../../hooks/useAuthStore.js';
 
 export const Navbar = () => {
 
+  const { startLogout } = useAuthStore();
 
   const value = useContext(ProviderContext);
   const [ cart ] = value.cart;
@@ -20,7 +22,7 @@ export const Navbar = () => {
          { cart.length }
       </span>
      
-      <button className="btn btn-outline-primary">
+      <button className="btn btn-outline-primary" onClick={ startLogout } >
       <i className="fa-solid fa-right-from-bracket"></i>
       &nbsp;
         Salir

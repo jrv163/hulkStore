@@ -36,10 +36,10 @@ export const LoginPage = () => {
     const registerSubmit = ( event ) => {
         event.preventDefault();
         if ( registerPassword !== registerPassword2 ) {
-            swal( "Oops" ,  "Passwords no son iguales!" ,  "error" )
+            swal( "Oops" ,  "Contraseñas no son iguales!" ,  "error" )
             return ;
         }
-        startRegister({ name: registerName, email: registerEmail, password: registerPassword })
+        startRegister({ name: registerName, email: registerEmail, password: registerPassword, password: registerPassword2 })
     }
 
     useEffect(() => {

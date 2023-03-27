@@ -1,24 +1,48 @@
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage } from '../auth';
+import { useAuthStore } from '../hooks';
 import { HulkPage } from '../hulkStore';
 
 
 export const AppRouter = () => {
 
-    
-    const authStatus = 'checking'; //'not-authenticated'; // 'authenticated' 
+    const { status, checkAuthToken } = useAuthStore();
+    // const authStatus = 'not-authenticated'; //'not-authenticated'; // 'authenticated' 
 
-  
+    useEffect(() => {
+        checkAuthToken();
+    }, [])
+    
+
+
+    if ( status === 'checking' ) {
+        return (
+            <h3>Cargando...</h3>
+        )
+    }
+
   return (
 
       <Routes>
             {
-                ( authStatus === 'not-authenticated' )
-                    ? <Route path='/auth/*' element={ <LoginPage /> }/>
-                    : <Route path='/*' element={ <HulkPage />}/>
+                ( status === 'not-authenticated' )
+                    ?(
+                        <>
+                         <Route path='/auth/*' element={ <LoginPage /> }/>
+                         <Route path='/*' element={ <Navigate to="/auth/login" />}/>
+                        </>
+                    ) 
+                    : (
+                        <>
+                             <Route path='/*' element={ <HulkPage />}/>
+                             <Route path='/*' element={ <Navigate to="/" />}/>
+                        </>
+                    )
+                        
             }
 
-                <Route path='/*' element={ <Navigate to="/auth/login" />}/>
+                
       </Routes>
   )
 }
