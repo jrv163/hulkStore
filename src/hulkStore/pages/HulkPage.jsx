@@ -1,3 +1,5 @@
+
+import { DeleteProducts } from "./DeleteProducts";
 import { ListProducts } from "./ListProducts";
 import { Navbar } from "./Navbar";
 import './products.css'
@@ -10,6 +12,7 @@ export const HulkPage = () => {
       <Navbar />
       <ListProducts />
       <ShoppingCart />
+     <DeleteProducts />
     </>
   )
 }

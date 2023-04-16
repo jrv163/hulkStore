@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ProviderContext } from '../../context/provider.js';
 import { useAuthStore } from '../../hooks/useAuthStore.js';
 
@@ -16,6 +17,15 @@ export const Navbar = () => {
           &nbsp;
           Hulk Store
       </span>
+
+      <Link to='/forms'>
+        <button className="btn btn-outline-light"  >
+        <i className="fa-solid fa-right-from-bracket"></i>
+        &nbsp;
+          Agregar Producto
+        </button>
+      </Link>
+
       <span className="navbar-brand  navbar__shopping">
       <i className="fa-solid fa-cart-shopping "></i>
       &nbsp;

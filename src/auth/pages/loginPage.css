@@ -43,6 +43,17 @@
     padding: 1.5%;
     border: none;
     cursor: pointer;
+    
+}
+
+.btnDelete
+{
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+    
 }
 .login-form-1 .btnSubmit{
     color: #fff;

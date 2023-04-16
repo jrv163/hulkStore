@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { ProviderContext } from '../../context/provider.js';
+import { useInventarioStore } from '../../hooks/useInventarioStore.js';
 
 
 export const ProductItem = (
@@ -13,17 +13,20 @@ export const ProductItem = (
     cantidad
  }) => {
 
-
+   const { setActiveEvent } = useInventarioStore();
     const value = useContext(ProviderContext);
     const [menu, setMenu] = value.menu;
     const addCart = value.addCart;
-  
     
     const toogleMenu = () => {
         setMenu(!menu);
     }
 
-    console.log(menu)
+    //console.log(menu)
+
+    const onSelect = ( event ) => {
+        setActiveEvent(event);
+    }
 
   return (
     <div className="producto" >
@@ -40,10 +43,10 @@ export const ProductItem = (
                 </div>
 
                 <div className="buttom">
-                    <button className="btn" onClick={() => addCart(id)} >
+                    <button className="btn" onClick={ (event ) => onSelect(event) } onDoubleClick={  () => addCart(id) } >
                         Añadir al carrito</button>
                     <div>
-                    <button className="btn" onClick={toogleMenu} >Info</button>
+                    <button className="btn" onClick={toogleMenu} >Ver</button>
                     </div>
                  </div>
             </div>

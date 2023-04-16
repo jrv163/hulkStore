@@ -272,6 +272,37 @@
     color: white;
 }
 
+.fab-danger{
+    border-radius: 100%;
+    font-size: 20px;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    
+}
+
+
+
+/*-----------------------------INVENTARIO - FORMULARIO-------------------------------------------------------------*/
+
+.container-forms{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.container-forms .buttom{
+    position:relative;
+    margin-left: 10px;
+}
+
+
+
 
 /* -----------------------------MEDIA -----------------------------------------------------------*/
 

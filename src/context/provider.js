@@ -1,18 +1,45 @@
 import { createContext, useEffect, useState } from "react";
-import Data from '../helpers/Data';
+import { useInventarioStore } from "../hooks/useInventarioStore";
+import { hulkApi } from "../api";
+// import addreducer  from "./addReducer";
+
 
 export const ProviderContext = createContext();
 
 export const DataProvider = (props) => {
     
-    const [productos, setProductos] = useState([]);
+    const [productoss, setProductos] = useState([]);
+    const [datos, setDatos] = useState([]);
     const [menu, setMenu] = useState(false);
     const [ cart, setCart ] = useState([]);
     const [ total, setTotal ] = useState(0);
 
+const { productos, startLoadingProducts } = useInventarioStore();
+    console.log( { productos } )
+
+//     useEffect(() => {
+   
+//         fetch( 'http://localhost:4000/api/productos' )
+//        .then( resp => resp.json())
+//        .then( data => console.log( data ));
+
+//    }, [])
+
+useEffect(() => {
+    startLoadingProducts()
+}, [])
+
+
+// const { data } = startLoadingProducts();
+// console.log( {data} )
+// const Data = data;
+
 
     useEffect(() => {
-        const producto = Data.items
+
+        const producto = productos;
+        //const producto = Data;
+        console.log( producto)
 
         if ( producto ) {
             setProductos(producto)
@@ -56,8 +83,6 @@ export const DataProvider = (props) => {
       }
       getTotal()
     }, [cart])
-    
-    
 
     const value = {
         productos: [productos],

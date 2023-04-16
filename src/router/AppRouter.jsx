@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage } from '../auth';
 import { useAuthStore } from '../hooks';
 import { HulkPage } from '../hulkStore';
+import { HulkForms } from '../hulkStore/pages/HulkForms';
+
 
 
 export const AppRouter = () => {
@@ -36,6 +38,8 @@ export const AppRouter = () => {
                     : (
                         <>
                              <Route path='/*' element={ <HulkPage />}/>
+                             <Route path='/forms' element={ <HulkForms/>}/>
+        
                              <Route path='/*' element={ <Navigate to="/" />}/>
                         </>
                     )

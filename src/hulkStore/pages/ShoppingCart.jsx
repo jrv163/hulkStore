@@ -19,30 +19,13 @@ const toogleFalse = () => {
 const show1 = menu ? "shopping__carts show" : "shopping__carts";
 const show2 = menu ? "shopping__cart show" : "shopping__cart";
 
-const resta = id => {
-    cart.forEach( item => {
-        if( item.id === id ) {
-            item.cantidad === 1 ? item.cantidad = 1 : item.cantidad -= 1;
-        }
-        setCart([...cart])
-    } )
-}
 
-const suma = id => {
-    cart.forEach( item => {
-        if( item.id === id ) {
-            item.cantidad += 1;
-        }
-        setCart([...cart])
-    } )
-}
-
-const removeProducto = (id) => {
+const removeProducto = (_id) => {
     if( window.confirm( "¿Quieres eliminar el producto" ) ){
         cart.forEach((item, index) => {
-            if( item.id === id ){
-
-                item.cantidad = 1;
+            if( item._id === _id ){
+                
+                item.cantidad.preventExtensions = 1;
                 cart.splice(index, 1)
             }
         })
@@ -74,11 +57,11 @@ const removeProducto = (id) => {
                                 <p className='price'>${producto.price}</p>
                             </div>
                             <div>
-                            <i className="fa-solid fa-arrow-up aumentar" onClick={ () => suma(producto.id) }></i>
+                            
                             <p className='cantidad'>{producto.cantidad}</p>
-                            <i className="fa-solid fa-arrow-down aumentar" onClick={ () => resta( producto.id ) }></i>
+                          
                             </div>
-                            <div className='remove__item' onClick={() => removeProducto(producto.id)}>
+                            <div className='remove__item' onClick={() => removeProducto(producto._id)}>
                             <i className="fa-solid fa-trash"></i>
                             </div>
                      </div>

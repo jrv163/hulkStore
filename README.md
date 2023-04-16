@@ -4,10 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Development Steps
 
-1. Renombrar el archivo .env.template por .env
-2. Hacer los cambios respectivos en las variables de entorno
+1. Levantar el backend y base de datos
 
-REACT_API_URL=http://localhost:4000/api
+2. Loguearse con mongoDB de la siguiente manera para levantar la base de datos: 
+mongodb+srv://jamerrodriguezv:Usa2022@cluster0.0og7vau.mongodb.net/
+
+3. Registrarse en la aplicación y usar las mismas credenciales para iniciar sesión.
 
 ## Available Scripts
 
