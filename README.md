@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Levantar el backend y base de datos
 
 2. Loguearse con mongoDB de la siguiente manera para levantar la base de datos: 
-mongodb+srv://jamerrodriguezv:Usa2022@cluster0.0og7vau.mongodb.net/
+mongodb+srv://XXXXXXX:XXXXXX@cluster0.0og7vau.mongodb.net/
 
 3. Registrarse en la aplicación y usar las mismas credenciales para iniciar sesión.
 
